@@ -1,13 +1,16 @@
+// Nombre de boutons
+const uint8_t NBR_BOUTONS = 6;
+
 // Indiquer sur quelles broches sont connectés les boutons
-uint8_t pins[6] = {D1, D2, D3, D5, D6, D7};
+uint8_t pins[NBR_BOUTONS] = {D1, D2, D3, D5, D6, D7};
 
 // Au démarrage, on assume que les boutons sont relâchés
-uint8_t state[6] = {LOW};
+uint8_t state[NBR_BOUTONS] = {LOW};
   
 // Fonction exécutée au démarrage
 void setup() {
   // Configurrer les broches des boutons en mode "Entrée"
-  for (uint8_t i = 0; i < 6 ; i++) {
+  for (uint8_t i = 0; i < NBR_BOUTONS ; i++) {
     pinMode(pins[i], INPUT);
   }
 
@@ -37,8 +40,8 @@ void setup() {
 // Fonction exécutée en boucle à l'infini
 void loop() {
 
-  // Pour chacun des 6 boutons...
-  for (uint8_t i = 0; i < 6 ; i++) {
+  // Pour chacun des boutons...
+  for (uint8_t i = 0; i < NBR_BOUTONS ; i++) {
 
     // Lire l'état du bouton (haut ou bas)
     uint8_t etat_pin = !digitalRead(pins[i]);
