@@ -1,3 +1,6 @@
+#define DELAI_CLIGNOTEMENT 100
+#define DELAI_TOUCHE 150 // Supérieur à 100
+
 // Nombre de boutons
 const uint8_t NBR_BOUTONS = 6;
 
@@ -22,11 +25,11 @@ void setup() {
 
     // Allumer et attendre
     digitalWrite(BUILTIN_LED, LOW);
-    delay(100);
+    delay(DELAI_CLIGNOTEMENT);
 
     // Éteindre et attendre
     digitalWrite(BUILTIN_LED, HIGH);
-    delay(100);
+    delay(DELAI_CLIGNOTEMENT);
 
   } // Recommencer le clignotement de la DEL, ou continuer s'il y a déjà eu 3 clignotements
 
@@ -66,5 +69,5 @@ void loop() {
   digitalWrite(BUILTIN_LED, HIGH);
 
   // Attendre encore un peu
-  delay(50);
+  delay(DELAI_TOUCHE-100);
 }
