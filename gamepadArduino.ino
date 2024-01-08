@@ -7,9 +7,6 @@ const uint8_t NBR_BOUTONS = 6;
 // Indiquer sur quelles broches sont connectés les boutons
 uint8_t pins[NBR_BOUTONS] = {D1, D2, D3, D5, D6, D7};
 
-// Au démarrage, on assume que les boutons sont relâchés
-uint8_t state[NBR_BOUTONS] = {LOW};
-  
 // Fonction exécutée au démarrage
 void setup() {
   // Configurrer les broches des boutons en mode "Entrée"
